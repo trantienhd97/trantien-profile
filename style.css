@@ -415,6 +415,26 @@ section {
     color: #fff;
 }
 
+/* CV Preview */
+.cv-preview {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.cv-container {
+    background: var(--bg-card);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .cv-container iframe {
+        height: 500px;
+    }
+}
+
 /* Contact */
 .contact-card {
     max-width: 800px;
