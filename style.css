@@ -328,47 +328,61 @@ section {
 
 .project-name {
     color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+}
+
+.project-detailed {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-detailed:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.project-desc {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.task-list {
+    list-style: none;
     margin-bottom: 1rem;
 }
 
-.achievements {
-    list-style: none;
-    margin-top: 1.5rem;
-}
-
-.achievements li {
-    margin-bottom: 0.8rem;
+.task-list li {
+    margin-bottom: 0.5rem;
     padding-left: 1.5rem;
     position: relative;
     color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
-.achievements li::before {
-    content: '→';
+.task-list li::before {
+    content: '▹';
     position: absolute;
     left: 0;
     color: var(--primary-color);
 }
 
-.project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.project-mini {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1.5rem;
-    border-radius: 12px;
-}
-
-.achievement {
-    display: block;
-    margin-top: 1rem;
+.achievement-tag {
+    display: inline-block;
+    background: rgba(34, 211, 238, 0.1);
     color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
     font-weight: 600;
+    border: 1px solid rgba(34, 211, 238, 0.2);
 }
+
 
 /* Skills */
 .skills-wrapper {
