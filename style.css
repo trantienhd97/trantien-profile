@@ -206,6 +206,23 @@ nav .container {
     animation: blob-float 10s infinite alternate;
     position: relative;
     box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
+    overflow: hidden;
+    /* Cắt ảnh theo hình dạng uốn lượn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#avatar-img {
+    width: 110%;
+    /* Để ảnh tràn nhẹ ra ngoài che phủ các góc */
+    height: 110%;
+    object-fit: cover;
+    transition: var(--transition-slow);
+}
+
+.blob:hover #avatar-img {
+    transform: scale(1.1);
 }
 
 @keyframes blob-float {
