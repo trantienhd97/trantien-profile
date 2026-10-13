@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trần Văn Tiến — CV</title>
+<style>
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/space-grotesk-latin.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Space Grotesk';
+    src: url('./fonts/space-grotesk-latin-ext.woff2') format('woff2');
+    font-weight: 300 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/dm-sans-latin.woff2') format('woff2');
+    font-weight: 100 1000;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'DM Sans';
+    src: url('./fonts/dm-sans-latin-ext.woff2') format('woff2');
+    font-weight: 100 1000;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #1a1a2e;
+    background: #ffffff;
+    padding: 0;
+    margin: 0;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* === HEADER === */
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a2e;
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .header-gradient {
+    height: 2px;
+    background: linear-gradient(to right, hsl(187, 74%, 32%), hsl(270, 70%, 45%));
+    border-radius: 1px;
+    margin-bottom: 8px;
+  }
+
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    color: #555;
+  }
+
+  .contact-row a {
+    color: #555;
+    text-decoration: none;
+  }
+
+  .contact-row .separator {
+    color: #ccc;
+  }
+
+  /* === SECTIONS === */
+  .section {
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(187, 74%, 32%);
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* === PROFESSIONAL SUMMARY === */
+  .summary-text {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* Links must never break across lines */
+  a {
+    white-space: nowrap;
+  }
+
+  /* === CORE COMPETENCIES === */
+  .competencies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .competency-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    color: hsl(187, 74%, 28%);
+    background: hsl(187, 40%, 95%);
+    padding: 3px 10px;
+    border-radius: 3px;
+    border: 1px solid hsl(187, 40%, 88%);
+  }
+
+  /* === WORK EXPERIENCE === */
+  .job {
+    margin-bottom: 12px;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px;
+  }
+
+  .job-company {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: hsl(270, 70%, 45%);
+  }
+
+  .job-period {
+    font-size: 10px;
+    color: #777;
+    white-space: nowrap;
+  }
+
+  .job-role {
+    font-size: 11px;
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 4px;
+  }
+
+  .job-location {
+    font-size: 10px;
+    color: #888;
+  }
+
+  .job ul {
+    padding-left: 16px;
+    margin-top: 4px;
+  }
+
+  .job li {
+    font-size: 10.5px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 2px;
+  }
+
+  .job li strong {
+    font-weight: 600;
+  }
+
+  /* === PROJECTS === */
+  .project {
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: hsl(270, 70%, 45%);
+  }
+
+  .project-badge {
+    font-size: 9px;
+    font-weight: 500;
+    color: hsl(187, 74%, 32%);
+    background: hsl(187, 40%, 95%);
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-left: 6px;
+  }
+
+  .project-desc {
+    font-size: 10.5px;
+    color: #444;
+    margin-top: 2px;
+  }
+
+  .project-tech {
+    font-size: 9.5px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  /* === EDUCATION === */
+  .edu-item {
+    margin-bottom: 6px;
+  }
+
+  .edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .edu-title {
+    font-weight: 600;
+    font-size: 11px;
+    color: #333;
+  }
+
+  .edu-org {
+    color: hsl(270, 70%, 45%);
+    font-weight: 500;
+  }
+
+  .edu-year {
+    font-size: 10px;
+    color: #777;
+  }
+
+  .edu-desc {
+    font-size: 10px;
+    color: #666;
+  }
+
+  /* === CERTIFICATIONS === */
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+
+  .cert-title {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .cert-org {
+    color: hsl(270, 70%, 45%);
+  }
+
+  .cert-year {
+    font-size: 10px;
+    color: #777;
+  }
+
+  /* === SKILLS === */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+  }
+
+  .skill-item {
+    font-size: 10.5px;
+    color: #444;
+  }
+
+  .skill-category {
+    font-weight: 600;
+    color: #333;
+    font-size: 10.5px;
+  }
+
+  /* === PRINT === */
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      padding: 0;
+    }
+  }
+
+  /* === PAGE BREAK CONTROL === */
+  .avoid-break {
+    break-inside: avoid;
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body, .summary-text, .job li, .project-desc, .skill-item, .contact-row, .job-role, .edu-desc, .competency-tag {
+    font-family: 'Be Vietnam Pro', 'DM Sans', sans-serif !important;
+  }
+  .header h1, .section-title, .job-company, .project-title, .edu-org {
+    font-family: 'Be Vietnam Pro', 'Space Grotesk', sans-serif !important;
+  }
+  .job li { font-size: 10px; margin-bottom: 1px; }
+  .summary-text { font-size: 10.5px; }
+  .section { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Trần Văn Tiến</h1>
+    <div class="header-gradient"></div>
+    <div class="contact-row">
+      <span>trantien97ptit@gmail.com · 0399.543.531</span>
+      <span class="separator">|</span>
+      <a href="https://trantienhd97.github.io/trantien-profile/">Portfolio</a>
+      <span class="separator">|</span>
+      <a href="https://trantienhd97.github.io/trantien-profile/">trantienhd97.github.io</a>
+      <span class="separator">|</span>
+      <span>Hà Nội · Ứng tuyển Flutter · MBS</span>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <div class="section">
+    <div class="section-title">Tóm tắt nghề nghiệp</div>
+    <div class="summary-text">Lập trình viên Mobile chuyên Flutter/Dart (iOS & Android), 5+ năm phát triển–bảo trì–vận hành Production. Thành thạo Clean Architecture, OOP, Design Pattern, Clean Code; tích hợp REST API/JSON, Firebase, realtime (WebSocket/Firebase Realtime); release App Store & Google Play; tối ưu performance/memory; phối hợp PO/BA/UI-UX/Backend (Agile/Scrum); code review; đọc tài liệu kỹ thuật tiếng Anh.</div>
+  </div>
+
+  <!-- CORE COMPETENCIES -->
+  <div class="section">
+    <div class="section-title">Năng lực khớp JD MBS</div>
+    <div class="competencies-grid">
+      <span class="competency-tag">Flutter / Dart / lifecycle</span>
+<span class="competency-tag">REST API · JSON · Git</span>
+<span class="competency-tag">Firebase · Realtime / WebSocket</span>
+<span class="competency-tag">App Store & Google Play</span>
+<span class="competency-tag">Performance · Debug · Production</span>
+<span class="competency-tag">Clean Architecture · OOP</span>
+<span class="competency-tag">Agile/Scrum · Code review</span>
+<span class="competency-tag">Android Studio · Xcode · VS Code</span>
+    </div>
+  </div>
+
+  <!-- WORK EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Kinh nghiệm làm việc</div>
+    
+<div class="job avoid-break">
+  <div class="job-header">
+    <span class="job-company">SUPA</span>
+    <span class="job-period">09/2024 – Hiện tại</span>
+  </div>
+  <div class="job-role">Lập trình viên Mobile (Flutter) · Hà Nội</div>
+  <ul>
+    <li>Phát triển &amp; bảo trì app <strong>Flutter/Dart</strong> (iOS/Android): module nghiệp vụ, UI, tích hợp <strong>REST API/JSON</strong> với backend.</li>
+    <li>Phối hợp product/BA và UI/UX triển khai tính năng mới; cải tiến UX theo thiết kế handover.</li>
+    <li>Release Production <strong>Google Play &amp; App Store</strong>; CI/CD, hotfix; hỗ trợ vận hành sau go-live.</li>
+    <li>Tối ưu <strong>performance / memory / crash</strong>; debug mobile; tích hợp <strong>Firebase</strong> &amp; realtime; Git + code review.</li>
+    <li><strong>4.000+ DAU</strong> trên iOS &amp; Android.</li>
+    <li><strong>POS BI-A (React Native):</strong> realtime qua <strong>Firebase Realtime</strong> (WebSocket-style); triển khai &amp; bảo trì cửa hàng.</li>
+  </ul>
+</div>
+<div class="job avoid-break">
+  <div class="job-header">
+    <span class="job-company">FPT Information System</span>
+    <span class="job-period">01/2020 – 09/2024</span>
+  </div>
+  <div class="job-role">Lập trình viên Mobile / Team Lead · Hà Nội</div>
+  <ul>
+    <li>Lead <strong>DMS &amp; CRM</strong>: 2 app Store, <strong>1.500+ users</strong>; tracking realtime, đơn hàng, báo cáo; Agile/Scrum.</li>
+    <li>IoT Smart Home/Parking: BLE, native modules, <strong>SDK bên thứ ba</strong>; <strong>1.000+ users</strong>; đọc tài liệu kỹ thuật tiếng Anh.</li>
+    <li>Quản lý team 2–4 (BA/Cloud/Test/Mobile); mentoring; <strong>code review</strong> và chuẩn hóa chất lượng.</li>
+  </ul>
+</div>
+
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="section avoid-break">
+    <div class="section-title">Dự án</div>
+    
+<div class="project avoid-break">
+  <div><span class="project-title">Cross-platform POS</span><span class="project-badge">Flutter</span></div>
+  <div class="project-desc">Flutter + ReactJS + .NET + PostgreSQL. MVP; onboard 3 cửa hàng trong 2 tuần (01/2026–03/2026). Ownership end-to-end.</div>
+</div>
+
+  </div>
+
+  <!-- EDUCATION & CERTIFICATIONS -->
+  <div class="section avoid-break">
+    <div class="section-title">Học vấn</div>
+    
+<div class="edu-item">
+  <div class="edu-header">
+    <div class="edu-title"><span class="edu-org">PTIT</span> — Kỹ sư Điện tử – Viễn thông</div>
+    <span class="edu-year">2015 – 2020</span>
+  </div>
+</div>
+
+  </div>
+
+  <div class="section avoid-break">
+    <div class="section-title">Điểm nổi bật cho vị trí</div>
+    
+<div class="cert-item"><span class="cert-title">Release App Store/Google Play · Firebase realtime · Production support · Clean Architecture</span><span class="cert-year"></span></div>
+
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section avoid-break">
+    <div class="section-title">Kỹ năng kỹ thuật</div>
+    
+<div class="skills-grid">
+  <div class="skill-item"><span class="skill-category">JD core:</span> Flutter, Dart, Flutter lifecycle, OOP, Design Pattern, Clean Code, REST API, JSON, Git, English tech docs</div>
+  <div class="skill-item"><span class="skill-category">JD ưu tiên:</span> App Store/Play, Firebase, performance/memory/debug, Agile/Scrum, WebSocket/realtime, Android Studio, Xcode, VS Code</div>
+  <div class="skill-item"><span class="skill-category">Bổ sung:</span> Clean Architecture, CI/CD, code review, Production support, React Native, native modules</div>
+</div>
+
+  </div>
+
+</div>
+</body>
+</html>
